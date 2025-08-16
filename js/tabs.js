@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Clear existing content and show skills
                 clearTerminalContent();
                 displaySkills();
-            } 
-            else {
+            } else if (tabTitle === 'contact.md') {
+                // Clear existing content and show contact info
+                clearTerminalContent();
+                displayContact();
+            } else {
                 // For main.sh, just clear and show welcome message
                 clearTerminalContent();
                 displayWelcome();
@@ -87,6 +90,45 @@ document.addEventListener('DOMContentLoaded', function() {
             <p><span class="link" onclick="window.open('https://github.com/omsingh10/student-management', '_blank')">GitHub</span></p>
         </div>`;
         commandHistory.appendChild(projectsContent);
+    }
+    
+    // Function to display contact information
+    function displayContact() {
+        const contactContent = document.createElement('div');
+        contactContent.classList.add('line', 'response');
+        contactContent.innerHTML = `
+        <h3 class="highlight">Contact Information</h3>
+        <div class="contact-container">
+            <div class="contact-item">
+                <p><i class="fas fa-envelope"></i> Email</p>
+                <p><a href="mailto:contact@om59singh@gmail.com" class="link">contact@om59singh@gmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <p><i class="fab fa-github"></i> GitHub</p>
+                <p><a href="https://github.com/omsingh10" target="_blank" class="link">github.com/omsingh10</a></p>
+            </div>
+            <div class="contact-item">
+                <p><i class="fab fa-linkedin"></i> LinkedIn</p>
+                <p><a href="https://linkedin.com/in/om10singh" target="_blank" class="link">linkedin.com/in/om10singh</a></p>
+            </div>
+            <div class="contact-item">
+                <p><i class="fas fa-phone"></i> Phone</p>
+                <p>+91 8788493707</p>
+            </div>
+            <div class="contact-item">
+                <p><i class="fas fa-map-marker-alt"></i> Location</p>
+                <p>mumbai, India</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h4>Send me a message</h4>
+            <p>Feel free to reach out for opportunities, collaborations, or just to say hello!</p>
+            <div class="form-simulation">
+                <p><span class="prompt">$</span> echo "Your message has been sent! I'll get back to you soon."</p>
+            </div>
+        </div>
+        `;
+        commandHistory.appendChild(contactContent);
     }
     
     // Function to display skills

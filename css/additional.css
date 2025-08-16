@@ -87,3 +87,127 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* Contact tab styling */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid var(--highlight-color);
+}
+
+.contact-item p {
+    margin: 5px 0;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    color: var(--secondary-highlight);
+}
+
+.contact-form {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.contact-form h4 {
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+.form-simulation {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.form-simulation .prompt {
+    color: var(--prompt-color);
+    margin-right: 5px;
+}
+
+/* Style for the 4th tab (contact.md) */
+.terminal-tabs .tab:nth-child(4) {
+    border-bottom-color: var(--tertiary-color);
+}
+
+.terminal-tabs .tab:nth-child(4).active {
+    border-bottom: 2px solid var(--tertiary-color);
+}
+
+/* Settings popup styles for theme switching */
+.settings-popup {
+    position: absolute;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 240px;
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+}
+
+.settings-popup.visible {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+.settings-header {
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--highlight-color);
+}
+
+.settings-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.theme-btn {
+    padding: 5px 12px;
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+}
+
+.theme-btn.active {
+    background-color: var(--prompt-color);
+    color: var(--bg-color);
+    border-color: var(--prompt-color);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
