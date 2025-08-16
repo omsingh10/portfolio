@@ -221,8 +221,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'resume':
                     responseDiv.innerHTML = `
                         <p>You can download my resume using the link below:</p>
-                        <p><a href="resources/Om-Singh-Resume.pdf" download class="link"><i class="fas fa-file-download"></i> Download Resume</a></p>
+                        <p><a href="omsingh-resume.pdf" download="Om_Singh_Resume.pdf" class="link"><i class="fas fa-file-download"></i> Download Resume</a></p>
+                        <div class="resume-preview">
+                            <div class="preview-header">
+                                <i class="fas fa-file-pdf"></i> Resume Preview
+                            </div>
+                            <div class="preview-content">
+                                <p><strong>Om Singh</strong></p>
+                                <p>Associate Software Engineer</p>
+                                <p class="preview-section">Experience, Education, Skills, and Projects available in the PDF</p>
+                                <button id="download-resume-btn" class="resume-download-btn">Download PDF <i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                        <p class="resume-note">The PDF contains my complete professional background and qualifications.</p>
                     `;
+                    
+                    // Add event listener to the download button after it's added to the DOM
+                    setTimeout(() => {
+                        const downloadBtn = document.getElementById('download-resume-btn');
+                        if (downloadBtn) {
+                            downloadBtn.addEventListener('click', function() {
+                                const link = document.createElement('a');
+                                link.href = 'omsingh-resume.pdf';
+                                link.download = 'Om_Singh_Resume.pdf';
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+                                
+                                // Show download confirmation
+                                const confirmation = document.createElement('div');
+                                confirmation.className = 'download-confirmation';
+                                confirmation.innerHTML = '<i class="fas fa-check-circle"></i> Resume download started!';
+                                responseDiv.appendChild(confirmation);
+                                
+                                // Remove confirmation after 3 seconds
+                                setTimeout(() => {
+                                    if (confirmation.parentNode) {
+                                        confirmation.parentNode.removeChild(confirmation);
+                                    }
+                                }, 3000);
+                            });
+                        }
+                    }, 100);
                     break;
                     
                 case 'clear':
