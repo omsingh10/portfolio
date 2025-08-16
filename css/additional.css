@@ -1,0 +1,89 @@
+/* Additional terminal styles */
+.terminal.maximized {
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 100 !important;
+    left: 100 !important;
+    right: 100 !important;
+    bottom: 100 !important;
+    z-index: 9999 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Body state when terminal is maximized */
+.terminal-maximized {
+    overflow: hidden !important;
+}
+
+/* Make sure terminal is visible when maximized */
+.terminal.maximized .terminal-body {
+    max-height: calc(100vh - 40px) !important;
+}
+
+/* Make tab switching more reliable */
+.line, .response, .command-history {
+    pointer-events: auto;
+}
+
+/* Fix for cursor and input */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background-color: var(--highlight-color);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+    position: relative;
+    z-index: 100;
+}
+
+/* Make cursor more visible with glow effect */
+.cursor.blink {
+    box-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color);
+}
+
+/* Make command input more visible */
+#command-input {
+    min-width: 8px !important;
+    min-height: 16px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    outline: none !important;
+    padding: 0 2px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: transparent !important;
+    caret-color: var(--highlight-color) !important;
+    margin-left: 4px !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    white-space: pre !important;
+}
+
+#command-input:focus, #command-input:active {
+    box-shadow: 0 0 0 2px rgba(87, 199, 255, 0.2) !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Ensure terminal content has proper z-index */
+.terminal-body .line {
+    position: relative;
+    z-index: 5;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

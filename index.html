@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Singh's Terminal Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <link rel="stylesheet" href="css/light-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particle" style="top:10%; left:10%; animation-delay: 0s;"></div>
+    <div class="particle" style="top:20%; left:80%; animation-delay: 2s;"></div>
+    <div class="particle" style="top:50%; left:30%; animation-delay: 4s;"></div>
+    <div class="particle" style="top:70%; left:70%; animation-delay: 6s;"></div>
+    <div class="particle" style="top:80%; left:20%; animation-delay: 8s;"></div>
+    <div class="particle" style="top:30%; left:90%; animation-delay: 10s;"></div>
+    <div class="particle" style="top:90%; left:40%; animation-delay: 12s;"></div>
+    
+    <div class="container">
+        <div class="terminal-tabs">
+            <div class="tab active">main.sh</div>
+            <div class="tab">projects.js</div>
+            <div class="tab">skills.py</div>
+        </div>
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button close"></div>
+                    <div class="terminal-button minimize"></div>
+                    <div class="terminal-button maximize"></div>
+                </div>
+                <div class="terminal-title">Om_singh_@portfolio: ~/</div>
+                <div class="terminal-options">
+                    <span><i class="fas fa-cog"></i></span>
+                    <span><i class="fas fa-expand"></i></span>
+                </div>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <div class="line">
+                    <span class="prompt">Om_singh_@portfolio:~$</span>
+                    <span class="typed-text">welcome humans all i know i how to create and fix</span>
+                </div>
+                <div class="line response">
+                    <pre class="ascii-art" data-text="HACKER">
+  ___  __  __    ____ ___ _   _  ____ _   _ 
+ / _ \|  \/  |  / ___|_ _| \ | |/ ___| | | |
+| | | | |\/| |  \___ \| ||  \| | |  _| |_| |
+| |_| | |  | |   ___) | || |\  | |_| |  _  |
+ \___/|_|  |_|  |____/___|_| \_|\____|_| |_|
+                                                                
+    </pre>
+                    <p>Welcome to my interactive portfolio terminal.</p>
+                    <p>Type <span class="highlight">help</span> to see available commands.</p>
+                </div>
+                <div id="command-history"></div>
+                <div class="line current-line">
+                    <span class="prompt">Om_singh@portfolio:~$</span>
+                    <span contenteditable="true" class="command" id="command-input" spellcheck="false" style="min-width:8px; min-height:16px; display:inline-block;"></span>
+                    <span class="cursor blink"></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-message">
+            <p>For the best experience, please view on a desktop device.</p>
+            <p>Mobile version has limited functionality.</p>
+        </div>
+    </div>
+
+    <script src="js/terminal.js"></script>
+    <script src="js/ascii-animations.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/command-processor.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/terminal-fixes.js"></script>
+</body>
+</html>

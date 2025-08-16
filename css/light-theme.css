@@ -1,0 +1,132 @@
+/* Enhanced light theme styles (with black background) */
+
+/* Better contrast and readability in light theme */
+.light-theme .terminal {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    box-shadow: 0 0 15px rgba(26, 117, 255, 0.3), 0 0 0 1px rgba(26, 117, 255, 0.2) !important;
+    backdrop-filter: blur(5px);
+}
+
+.light-theme .terminal-header {
+    background: var(--header-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.light-theme .terminal-body {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.light-theme .prompt {
+    color: var(--prompt-color) !important;
+    text-shadow: 0 0 2px rgba(10, 138, 42, 0.5) !important;
+}
+
+.light-theme .highlight {
+    color: var(--highlight-color) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 2px rgba(26, 117, 255, 0.5) !important;
+}
+
+.light-theme .link {
+    color: var(--highlight-color) !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+}
+
+.light-theme .link:hover {
+    color: var(--secondary-highlight) !important;
+    text-decoration: none !important;
+}
+
+/* Terminal tabs in light mode (with black background) */
+.light-theme .terminal-tabs .tab {
+    background-color: #0d1017 !important;
+    color: #a2aabc !important;
+    border: 1px solid #171c26 !important;
+    border-bottom: none !important;
+}
+
+.light-theme .terminal-tabs .tab.active {
+    background-color: #000000 !important;
+    font-weight: 600 !important;
+    border-bottom: none !important;
+    position: relative !important;
+    color: #1a75ff !important;
+}
+
+.light-theme .terminal-tabs .tab.active::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: -1px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 2px !important;
+    background-color: #000000 !important;
+}
+
+/* Terminal buttons in light mode */
+.light-theme .terminal-button {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .terminal-button.close {
+    background-color: #ff6b6b !important;
+}
+
+.light-theme .terminal-button.minimize {
+    background-color: #ffd93d !important;
+}
+
+.light-theme .terminal-button.maximize {
+    background-color: #6bcb77 !important;
+}
+
+/* Command input styling in light mode */
+.light-theme #command-input {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 2px !important;
+}
+
+.light-theme #command-input:focus {
+    box-shadow: 0 0 0 2px rgba(26, 117, 255, 0.2) !important;
+}
+
+/* Cursor styling in light mode */
+.light-theme .cursor {
+    background-color: var(--highlight-color) !important;
+}
+
+.light-theme .cursor.blink {
+    box-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color) !important;
+}
+
+/* ASCII art in light mode */
+.light-theme .ascii-art {
+    color: var(--secondary-highlight) !important;
+    text-shadow: 0 0 2px rgba(230, 57, 70, 0.2) !important;
+}
+
+/* Projects, skills, and other content sections */
+.light-theme .project-item,
+.light-theme .skill-category,
+.light-theme .experience-item,
+.light-theme .education-item {
+    border: 1px solid var(--border-color) !important;
+    background-color: rgba(13, 16, 23, 0.7) !important;
+    box-shadow: 0 2px 10px rgba(26, 117, 255, 0.1) !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+    border-radius: 5px !important;
+}
+
+.light-theme h2 {
+    color: var(--secondary-highlight) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 15px !important;
+}
+
+.light-theme h3 {
+    color: var(--highlight-color) !important;
+    margin-bottom: 10px !important;
+}
